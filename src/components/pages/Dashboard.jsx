@@ -14,6 +14,7 @@ import AddExpenseModal from "../Modals/AddExpense";
 import AddIncomeModal from "../Modals/addIncome";
 
 
+
 export default function Dashboard() {
   const [isExpenseModalVisible, setIsExpenseModalVisible] = useState(false);
   const [isIncomeModalVisible, setIsIncomeModalVsible] = useState(false);
