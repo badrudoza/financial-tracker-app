@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Header from "../Header";
 import Cards from "../Cards";
 import { Modal } from "antd";
-import AddExpensModal from "../Modals/addExpens";
 import AddIncomeModal from "../Modals/addIncome";
 import { addDoc, collection, getDocs, query } from "firebase/firestore";
 import { auth, db } from "../../firebase";
@@ -12,6 +11,7 @@ import moment from "moment";
 import TransactionTable from "../TransactionTable";
 import ChartComponent from "../Charts";
 import NoTransaction from "../NoTransaction";
+import AddExpensModal from "../Modals/AddExpense"
 
 export default function Dashboard() {
   const [isExpenseModalVisible, setIsExpenseModalVisible] = useState(false);
