@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import DefaultImages from "../../assets/DefaultImages.jpg"
+
 export default function Header() {
   const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
