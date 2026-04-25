@@ -10,7 +10,7 @@ import {
   DatePicker,
   Select,
 } from "antd";
-function AddExpensModal({
+function AddExpenseModal({
   isExpenseModalVisible,
   handleExpenseCancel,
   onFinish,
@@ -102,4 +102,4 @@ function AddExpensModal({
   );
 }
 
-export default AddExpensModal;
+export default AddExpenseModal;

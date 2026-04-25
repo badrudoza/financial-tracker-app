@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Header from "../Header";
 import Cards from "../Cards";
 import { Modal } from "antd";
-import AddIncomeModal from "../Modals/addIncome";
 import { addDoc, collection, getDocs, query } from "firebase/firestore";
 import { auth, db } from "../../firebase";
 import { toast } from "react-toastify";
@@ -11,7 +10,9 @@ import moment from "moment";
 import TransactionTable from "../TransactionTable";
 import ChartComponent from "../Charts";
 import NoTransaction from "../NoTransaction";
-import AddExpensModal from "../Modals/AddExpense"
+import AddExpenseModal from "../Modals/AddExpense";
+import AddIncomeModal from "../Modals/addIncome";
+
 
 export default function Dashboard() {
   const [isExpenseModalVisible, setIsExpenseModalVisible] = useState(false);
@@ -121,7 +122,7 @@ export default function Dashboard() {
           /> 
           {transactions.length!==0?<ChartComponent sortedTransaction={sortedTransaction} />:<NoTransaction />}
           
-          <AddExpensModal
+          <AddExpenseModal
             isExpenseModalVisible={isExpenseModalVisible}
             handleExpenseCancel={handleExpenseCancel}
             onFinish={onFinish}
