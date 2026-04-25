@@ -1,0 +1,23 @@
+.wrapper,.charts-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 80vh;
+}
+.title{
+    font-weight: 500;
+    font-size: 1.2rem;
+    text-align: center;
+  
+}
+.charts-wrapper{
+    width: 95%;
+    margin: 0 auto 1rem;
+    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 30px 8px rgba(227, 227, 227, .75);
+}
