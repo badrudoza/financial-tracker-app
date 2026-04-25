@@ -9,7 +9,7 @@ import TransactionTable from "../TransactionTable";
 import ChartComponent from "../Charts";
 import NoTransaction from "../NoTransaction";
 import AddExpenseModal from "../Modals/AddExpense";
-import AddIncomeModal from "../Modals/AddIncome"; // ✅ FIXED CASE
+import AddIncomeModal from "../Modals/AddIncome";
 
 export default function Dashboard() {
   const [isExpenseModalVisible, setIsExpenseModalVisible] = useState(false);
