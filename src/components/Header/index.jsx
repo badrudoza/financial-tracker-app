@@ -6,7 +6,7 @@ import { signOut } from "firebase/auth";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import DefaultImages from "@/assets/DefaultImages.jpg";
+import img from "@/assets/DefaultImages.jpg";
 
 export default function Header() {
   const [user, loading] = useAuthState(auth);
@@ -37,7 +37,7 @@ export default function Header() {
       <p className="logo">Financely.</p>
       {user && (
         <div style={{display:'flex',alignItems:"center",gap:"0.75rem"}}>
-          <img src={user.photoURL?user.photoURL:DefaultImages} style={{borderRadius:"50%",height:"1.5rem",width:"1.5rem"}} />
+          <img src={user.photoURL?user.photoURL:img} style={{borderRadius:"50%",height:"1.5rem",width:"1.5rem"}} />
           <p className="logo link" onClick={logoutFunc}>
             Logout
           </p>
