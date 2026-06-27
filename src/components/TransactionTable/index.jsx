@@ -146,9 +146,9 @@ let sortedTransaction = [...filteredTransactions].sort((a, b) => {
           placeholder="Filter by Type"
           allowClear
         >
-          <Option value="">All</Option>
-          <Option value="income">Income</Option>
-          <Option value="expense">Expense</Option>
+          <Select.Option value="">All</Select.Option>
+          <Select.Option value="income">Income</Select.Option>
+          <Select.Option value="expense">Expense</Select.Option>
         </Select>
       </div>
       <div className="my-table">

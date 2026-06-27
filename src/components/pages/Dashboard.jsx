@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../Header";
 import Cards from "../Cards";
-import { addDoc, collection, getDocs, query } from "firebase/firestore";
+import { addDoc, collection, getDocs, query,deleteDoc,doc } from "firebase/firestore";
 import { auth, db } from "../../firebase";
 import { toast } from "react-toastify";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -83,7 +83,26 @@ export default function Dashboard() {
       setLoading(false);
     }
   }
-
+  async function resetBalance() {
+    try {
+      if (!user) return;
+  
+      const q = query(collection(db, `users/${user.uid}/transactions`));
+  
+      const querySnapshot = await getDocs(q);
+  
+      for (const transaction of querySnapshot.docs) {
+        await deleteDoc(transaction.ref);
+      }
+  
+      setTransactions([]);
+  
+      toast.success("Balance Reset Successfully!");
+    } catch (error) {
+      console.log(error);
+      toast.error("Couldn't reset balance");
+    }
+  }
   // ---------------- CALCULATE BALANCE ----------------
   function calculateBalance() {
     let incomeTotal = 0;
@@ -133,6 +152,7 @@ export default function Dashboard() {
             currentBalance={currentBalance}
             income={income}
             expense={expense}
+            resetBalance={resetBalance}
           />
 
           {transactions.length !== 0 ? (
